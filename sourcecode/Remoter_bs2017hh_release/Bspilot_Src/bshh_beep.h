@@ -12,19 +12,12 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bshh_main.h"
-#include "bshh_led.h"
+#ifndef __BSHH_BEEP_H
+#define __BSHH_BEEP_H
 
-void bshh_ble_delay_ms(unsigned int dly)
-{
-	HAL_Delay(dly);
-}
+void bshh_beep_delay_ms(unsigned int dly);
+void bshh_beep_on(void);
+void bshh_beep_off(void);
+void bshh_beep_once(void);
 
-void bshh_led_toggle(void)
-{
-	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_8);
-	bshh_led_delay_ms(500);
-}
-
+#endif

@@ -248,7 +248,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* USER CODE BEGIN USART3_MspInit 1 */
-
   /* USER CODE END USART3_MspInit 1 */
   }
 

@@ -15,6 +15,7 @@
 #ifndef __BSHH_MAIN_H
 #define __BSHH_MAIN_H
 
+void bshh_main_delay_ms(unsigned int dly);
 void bshh_main_loop(void);
 
 #endif

@@ -1,5 +1,5 @@
-Bspilot_Src/bshh_main.o: \
- C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_main.c \
+Bspilot_Src/bshh_oled.o: \
+ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_oled.c \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Inc/main.h \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal.h \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Inc/stm32f1xx_hal_conf.h \
@@ -31,10 +31,8 @@ Bspilot_Src/bshh_main.o: \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_ll_usb.h \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pcd_ex.h \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_main.h \
- C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_led.h \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_oled.h \
- C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ble.h \
- C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_beep.h
+ C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_oled_table.h
 
 C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Inc/main.h:
 
@@ -98,10 +96,6 @@ C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Drivers\STM32F1xx_H
 
 C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_main.h:
 
-C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_led.h:
-
 C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_oled.h:
 
-C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ble.h:
-
-C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_beep.h:
+C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_oled_table.h:
