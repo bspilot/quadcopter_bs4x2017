@@ -14,28 +14,27 @@
 
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "bshh_beep.h"
+#include "bshh_oled.h"
+#include "bshh_adc.h"
 #include "bshh_event.h"
 
-void bshh_beep_delay_ms(unsigned int dly)
+extern ADC_HandleTypeDef hadc1;
+uint16_t bshh_adc_buffer[7];
+uint8_t bshh_adc_channel_index=0;
+
+void bshh_adc_delay_ms(unsigned int dly)
 {
 	HAL_Delay(dly);
 }
 
-void bshh_beep_on(void)
+void bshh_adc_start(void)
 {
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_SET);
-	bshh_beep_delay_ms(200);
+	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)bshh_adc_buffer, 7);
 }
 
-void bshh_beep_off(void)
+void bshh_adc_display(void)
 {
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_RESET);
+	BS_OLED_Show_Char(7,42,bshh_adc_channel_index+48);
+	BS_OLED_Show_Char(7,48,'-');
+	BS_OLED_Show_Number(7,54,bshh_adc_buffer[bshh_adc_channel_index]);
 }
-
-void bshh_beep_once(void)
-{
-	bshh_beep_on();
-	bshh_beep_off();
-}
-

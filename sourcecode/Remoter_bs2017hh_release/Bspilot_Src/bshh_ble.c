@@ -14,10 +14,10 @@
 
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "bshh_main.h"
 #include "bshh_led.h"
 #include "bshh_oled.h"
 #include "bshh_ble.h"
+#include "bshh_event.h"
 //
 extern UART_HandleTypeDef huart3;
 //

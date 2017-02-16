@@ -12,30 +12,14 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bshh_beep.h"
-#include "bshh_event.h"
+#ifndef __BSHH_CTRL_H
+#define __BSHH_CTRL_H
 
-void bshh_beep_delay_ms(unsigned int dly)
-{
-	HAL_Delay(dly);
-}
+void bshh_ctrl_delay_ms(unsigned int dly);
+void bshh_ctrl_num_to_asc(uint8_t number, uint8_t *asc_buf);
+uint8_t bshh_ctrl_checksum(uint8_t data_len, uint8_t *data_buffer);
+void bshh_ctrl_joystick(uint16_t js_throttle,uint16_t js_pitch,uint16_t js_roll,uint16_t js_yaw);
+void bshh_ctrl_cal(void);
+void bshh_ctrl_unlock(void);
 
-void bshh_beep_on(void)
-{
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_SET);
-	bshh_beep_delay_ms(200);
-}
-
-void bshh_beep_off(void)
-{
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_RESET);
-}
-
-void bshh_beep_once(void)
-{
-	bshh_beep_on();
-	bshh_beep_off();
-}
-
+#endif

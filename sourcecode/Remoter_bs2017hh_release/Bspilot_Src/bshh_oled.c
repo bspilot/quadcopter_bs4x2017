@@ -14,9 +14,9 @@
 
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "bshh_main.h"
+#include "bshh_event.h"
 #include "bshh_oled.h"
-#include <bshh_oled_table.h>
+#include "bshh_oled_table.h"
 
 void BS_OLED_Delay_ms(unsigned int dly)
 {
@@ -93,6 +93,21 @@ void BS_OLED_Show_Char(uint8_t row,uint8_t column,uint8_t asc_code)
 	asc_index=asc_code-32;
 	BS_OLED_Set_Cursor(row,column);
 	for(i=0;i<6;i++) BS_OLED_Write_Data(OLED_FONT_SIZE_6x8[asc_index][i]);
+}
+
+void BS_OLED_Show_Number(uint8_t row,uint8_t column, uint32_t number)
+{
+	uint8_t num_1st=0,num_2st=0,num_3st=0;
+	uint8_t i;
+	//
+	while(number>1000)  {num_3st++;number-=1000;}
+	while(number>100)   {num_2st++;number-=100;}
+	while(number>10)    {num_1st++;number-=10;}
+	//
+	BS_OLED_Show_Char(row,column,num_3st+48);
+	BS_OLED_Show_Char(row,column+6,num_2st+48);
+	BS_OLED_Show_Char(row,column+12,num_1st+48);
+	BS_OLED_Show_Char(row,column+18,number+48);
 }
 
 void BS_OLED_Show_Text(uint8_t row,uint8_t column,uint8_t offset)

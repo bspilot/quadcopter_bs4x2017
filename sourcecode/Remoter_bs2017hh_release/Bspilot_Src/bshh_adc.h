@@ -12,10 +12,13 @@
   **********************************************************************************************
  **/
 
-#ifndef __BSHH_MAIN_H
-#define __BSHH_MAIN_H
+#ifndef __BSHH_ADC_H
+#define __BSHH_ADC_H
 
-void bshh_main_delay_ms(unsigned int dly);
-void bshh_main_loop(void);
+extern uint8_t bshh_adc_channel_index;
+
+void bshh_adc_delay_ms(unsigned int dly);
+void bshh_adc_start(void);
+void bshh_adc_display(void);
 
 #endif

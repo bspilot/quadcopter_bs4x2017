@@ -12,30 +12,13 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bshh_beep.h"
-#include "bshh_event.h"
+#ifndef __BSHH_EVENT_H
+#define __BSHH_EVENT_H
 
-void bshh_beep_delay_ms(unsigned int dly)
-{
-	HAL_Delay(dly);
-}
+void bshh_event_delay_ms(unsigned int dly);
+void bshh_event_loop(void);
+void bshh_remote_control_event(void);
+void bshh_adc_display_event(void);
+void bshh_key_detect_event(void);
 
-void bshh_beep_on(void)
-{
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_SET);
-	bshh_beep_delay_ms(200);
-}
-
-void bshh_beep_off(void)
-{
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_RESET);
-}
-
-void bshh_beep_once(void)
-{
-	bshh_beep_on();
-	bshh_beep_off();
-}
-
+#endif

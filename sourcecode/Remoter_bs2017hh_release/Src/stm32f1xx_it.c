@@ -42,6 +42,9 @@
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
 extern UART_HandleTypeDef huart3;
+extern uint32_t system_100ms_timer;
+extern uint32_t system_200ms_timer;
+extern uint32_t system_500ms_timer;
 
 /******************************************************************************/
 /*            Cortex-M3 Processor Interruption and Exception Handlers         */ 
@@ -169,7 +172,9 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-
+  system_100ms_timer++;
+  system_200ms_timer++;
+  system_500ms_timer++;
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   HAL_SYSTICK_IRQHandler();
