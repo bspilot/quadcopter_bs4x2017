@@ -33,7 +33,8 @@ Bspilot_Src/bshh_ble.o: \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_led.h \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_oled.h \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ble.h \
- C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_event.h
+ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_event.h \
+ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_button.h
 
 C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Inc/main.h:
 
@@ -102,3 +103,5 @@ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ol
 C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ble.h:
 
 C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_event.h:
+
+C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_button.h:

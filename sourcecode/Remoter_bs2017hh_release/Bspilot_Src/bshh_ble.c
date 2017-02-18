@@ -18,6 +18,7 @@
 #include "bshh_oled.h"
 #include "bshh_ble.h"
 #include "bshh_event.h"
+#include "bshh_button.h"
 //
 extern UART_HandleTypeDef huart3;
 //
@@ -44,6 +45,12 @@ void bshh_ble_show_command(uint8_t row, uint8_t *status_ptr, uint16_t status_len
 			BS_OLED_Show_Char(row,120-i*8,status_ptr[index]);
 		}
 	}
+}
+
+
+void bshh_ble_send_ctrl_data(uint8_t *command_table, uint8_t command_len)
+{
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE) HAL_UART_Transmit(&huart3, command_table, command_len, 100);
 }
 
 void bshh_ble_AT_Test(void)

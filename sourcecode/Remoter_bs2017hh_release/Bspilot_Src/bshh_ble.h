@@ -17,6 +17,7 @@
 
 void bshh_ble_delay_ms(unsigned int dly);
 void bshh_ble_show_command(uint8_t row, uint8_t *status_ptr, uint16_t status_len);
+void bshh_ble_send_ctrl_data(uint8_t *command_table, uint8_t command_len);
 void bshh_ble_AT_Test(void);
 void bshh_ble_AT_Clear(void);
 

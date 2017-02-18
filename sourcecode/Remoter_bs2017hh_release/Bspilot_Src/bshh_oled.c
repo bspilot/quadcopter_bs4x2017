@@ -17,6 +17,7 @@
 #include "bshh_event.h"
 #include "bshh_oled.h"
 #include "bshh_oled_table.h"
+#include "bshh_button.h"
 
 void BS_OLED_Delay_ms(unsigned int dly)
 {
@@ -100,14 +101,30 @@ void BS_OLED_Show_Number(uint8_t row,uint8_t column, uint32_t number)
 	uint8_t num_1st=0,num_2st=0,num_3st=0;
 	uint8_t i;
 	//
-	while(number>1000)  {num_3st++;number-=1000;}
-	while(number>100)   {num_2st++;number-=100;}
-	while(number>10)    {num_1st++;number-=10;}
+	while(number>=1000)  {num_3st++;number-=1000;}
+	while(number>=100)   {num_2st++;number-=100;}
+	while(number>=10)    {num_1st++;number-=10;}
 	//
 	BS_OLED_Show_Char(row,column,num_3st+48);
 	BS_OLED_Show_Char(row,column+6,num_2st+48);
 	BS_OLED_Show_Char(row,column+12,num_1st+48);
 	BS_OLED_Show_Char(row,column+18,number+48);
+}
+
+void BS_OLED_Show_HEX_Number(uint8_t row,uint8_t column, uint8_t *number_ptr, uint8_t len)
+{
+	uint8_t num_high=0,num_low=0;
+	uint8_t i,k;
+	//
+	BS_OLED_Set_Cursor(row,column);
+	for(i=0;i<len;i++)
+	{
+		num_high=number_ptr[i]>>4;
+		num_low=number_ptr[i] & 0x0f;
+		//
+		for(k=0;k<6;k++) BS_OLED_Write_Data(OLED_NUM_SIZE_6x8[num_high][k]);
+		for(k=0;k<6;k++) BS_OLED_Write_Data(OLED_NUM_SIZE_6x8[num_low][k]);
+	}
 }
 
 void BS_OLED_Show_Text(uint8_t row,uint8_t column,uint8_t offset)
@@ -175,37 +192,43 @@ void BS_OLED_Show_Cal(uint8_t inv)
 
 void BS_OLED_Show_BLE_Clear(uint8_t inv)
 {
-	if(inv)
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE)
 	{
-		BS_OLED_Show_Text(4,0,26);
-		BS_OLED_Show_Text(4,18,27);
-		BS_OLED_Show_Text(4,36,28);
-		BS_OLED_Show_Text(4,54,29);
-	}
-	else
-	{
-		BS_OLED_Show_Text(4,0,22);
-		BS_OLED_Show_Text(4,18,23);
-		BS_OLED_Show_Text(4,36,24);
-		BS_OLED_Show_Text(4,54,25);
+		if(inv)
+		{
+			BS_OLED_Show_Text(4,0,26);
+			BS_OLED_Show_Text(4,18,27);
+			BS_OLED_Show_Text(4,36,28);
+			BS_OLED_Show_Text(4,54,29);
+		}
+		else
+		{
+			BS_OLED_Show_Text(4,0,22);
+			BS_OLED_Show_Text(4,18,23);
+			BS_OLED_Show_Text(4,36,24);
+			BS_OLED_Show_Text(4,54,25);
+		}
 	}
 }
 
 void BS_OLED_Show_BLE_Test(uint8_t inv)
 {
-	if(inv)
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE)
 	{
-		BS_OLED_Show_Text(2,0,34);
-		BS_OLED_Show_Text(2,18,35);
-		BS_OLED_Show_Text(2,36,36);
-		BS_OLED_Show_Text(2,54,37);
-	}
-	else
-	{
-		BS_OLED_Show_Text(2,0,30);
-		BS_OLED_Show_Text(2,18,31);
-		BS_OLED_Show_Text(2,36,32);
-		BS_OLED_Show_Text(2,54,33);
+		if(inv)
+		{
+			BS_OLED_Show_Text(2,0,34);
+			BS_OLED_Show_Text(2,18,35);
+			BS_OLED_Show_Text(2,36,36);
+			BS_OLED_Show_Text(2,54,37);
+		}
+		else
+		{
+			BS_OLED_Show_Text(2,0,30);
+			BS_OLED_Show_Text(2,18,31);
+			BS_OLED_Show_Text(2,36,32);
+			BS_OLED_Show_Text(2,54,33);
+		}
 	}
 }
 

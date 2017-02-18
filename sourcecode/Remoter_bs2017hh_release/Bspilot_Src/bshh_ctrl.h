@@ -15,6 +15,8 @@
 #ifndef __BSHH_CTRL_H
 #define __BSHH_CTRL_H
 
+extern uint8_t bshh_ctrl_command_table[32];
+
 void bshh_ctrl_delay_ms(unsigned int dly);
 void bshh_ctrl_num_to_asc(uint8_t number, uint8_t *asc_buf);
 uint8_t bshh_ctrl_checksum(uint8_t data_len, uint8_t *data_buffer);

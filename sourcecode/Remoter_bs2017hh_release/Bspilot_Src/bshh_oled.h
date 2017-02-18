@@ -34,6 +34,7 @@ void BS_OLED_Set_Cursor(uint8_t row,uint8_t column);
 void BS_OLED_Clear_Screen(void);
 void BS_OLED_Show_Char(uint8_t row,uint8_t column,uint8_t asc_code);
 void BS_OLED_Show_Number(uint8_t row,uint8_t column, uint32_t number);
+void BS_OLED_Show_HEX_Number(uint8_t row,uint8_t column, uint8_t *number_ptr, uint8_t len);
 void BS_OLED_Show_Text(uint8_t row,uint8_t column,uint8_t offset);
 void BS_OLED_Show_Logo(uint8_t inv);
 void BS_OLED_Show_Unlock(uint8_t inv);

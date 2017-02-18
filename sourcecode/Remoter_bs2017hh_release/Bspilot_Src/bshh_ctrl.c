@@ -17,8 +17,9 @@
 #include "bshh_ble.h"
 #include "bshh_ctrl.h"
 #include "bshh_event.h"
+#include "bshh_nrf.h"
+#include "bshh_button.h"
 
-extern UART_HandleTypeDef huart3;
 uint8_t bshh_ctrl_throttle,bshh_ctrl_pitch,bshh_ctrl_roll,bshh_ctrl_yaw;
 uint8_t bshh_ctrl_command_table[32];
 uint8_t bshh_ctrl_command_len=0;
@@ -81,7 +82,8 @@ void bshh_ctrl_joystick(uint16_t js_throttle,uint16_t js_pitch,uint16_t js_roll,
 	bshh_ctrl_num_to_asc(bshh_ctrl_checksum(bshh_ctrl_command_len,bshh_ctrl_command_table),&bshh_ctrl_command_table[bshh_ctrl_command_len]);
 	bshh_ctrl_command_table[bshh_ctrl_command_len+2]='/';
 	//
-	HAL_UART_Transmit(&huart3, bshh_ctrl_command_table, bshh_ctrl_command_len+3, 100);
+	bshh_ble_send_ctrl_data(bshh_ctrl_command_table, bshh_ctrl_command_len+3);
+	bshh_nrf_send_ctrl_data(bshh_ctrl_command_table);
 }
 
 void bshh_ctrl_cal(void)
@@ -97,7 +99,8 @@ void bshh_ctrl_cal(void)
 	bshh_ctrl_num_to_asc(bshh_ctrl_checksum(bshh_ctrl_command_len,bshh_ctrl_command_table),&bshh_ctrl_command_table[bshh_ctrl_command_len]);
 	bshh_ctrl_command_table[bshh_ctrl_command_len+2]='/';
 	//
-	HAL_UART_Transmit(&huart3, bshh_ctrl_command_table, bshh_ctrl_command_len+3, 100);
+	bshh_ble_send_ctrl_data(bshh_ctrl_command_table, bshh_ctrl_command_len+3);
+	bshh_nrf_send_ctrl_data(bshh_ctrl_command_table);
 }
 
 void bshh_ctrl_unlock(void)
@@ -114,6 +117,7 @@ void bshh_ctrl_unlock(void)
 	bshh_ctrl_num_to_asc(bshh_ctrl_checksum(bshh_ctrl_command_len,bshh_ctrl_command_table),&bshh_ctrl_command_table[bshh_ctrl_command_len]);
 	bshh_ctrl_command_table[bshh_ctrl_command_len+2]='/';
 	//
-	HAL_UART_Transmit(&huart3, bshh_ctrl_command_table, bshh_ctrl_command_len+3, 100);
+	bshh_ble_send_ctrl_data(bshh_ctrl_command_table, bshh_ctrl_command_len+3);
+	bshh_nrf_send_ctrl_data(bshh_ctrl_command_table);
 }
 

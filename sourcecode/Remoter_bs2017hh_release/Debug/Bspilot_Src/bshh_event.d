@@ -36,7 +36,9 @@ Bspilot_Src/bshh_event.o: \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ble.h \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_beep.h \
  C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_adc.h \
- C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ctrl.h
+ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ctrl.h \
+ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_nrf.h \
+ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_button.h
 
 C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Inc/main.h:
 
@@ -111,3 +113,7 @@ C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_be
 C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_adc.h:
 
 C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_ctrl.h:
+
+C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_nrf.h:
+
+C:/elipse_arm_ide/workspace_release/Remoter_bs2017hh_release/Bspilot_Src/bshh_button.h:

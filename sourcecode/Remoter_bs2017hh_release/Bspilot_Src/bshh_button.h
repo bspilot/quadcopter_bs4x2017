@@ -12,14 +12,16 @@
   **********************************************************************************************
  **/
 
-#ifndef __BSHH_ADC_H
-#define __BSHH_ADC_H
+#ifndef __BSHH_BUTTON_H
+#define __BSHH_BUTTON_H
 
-extern uint8_t bshh_adc_channel_index;
-extern uint16_t bshh_adc_buffer[7];
+extern uint8_t bshh_nrf_ble_mode;
 
-void bshh_adc_delay_ms(unsigned int dly);
-void bshh_adc_start(void);
-void bshh_adc_display(void);
+#define BSHH_NRF_MODE 0
+#define BSHH_BLE_MODE 1
+
+void bshh_button_delay_ms(unsigned int dly);
+void bshh_button_mode_detect(void);
+void bshh_button_key_detect(void);
 
 #endif

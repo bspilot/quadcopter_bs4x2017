@@ -32,7 +32,9 @@ Src/main.o: \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pcd_ex.h \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_event.h \
  C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_oled.h \
- C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_adc.h
+ C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_adc.h \
+ C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_nrf.h \
+ C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_button.h
 
 C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Inc/main.h:
 
@@ -99,3 +101,7 @@ C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_ev
 C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_oled.h:
 
 C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_adc.h:
+
+C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_nrf.h:
+
+C:\elipse_arm_ide\workspace_release\Remoter_bs2017hh_release\Bspilot_Src/bshh_button.h:
