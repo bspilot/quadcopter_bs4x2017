@@ -4376,7 +4376,7 @@ LOAD c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv
                 0x08000000                g_pfnVectors
                 0x0800010c                . = ALIGN (0x4)
 
-.text           0x0800010c     0x600c
+.text           0x0800010c     0x6054
                 0x0800010c                . = ALIGN (0x4)
  *(.text)
  .text          0x0800010c       0x5c c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
@@ -4807,135 +4807,138 @@ LOAD c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv
  .text.BS_OLED_Show_Text
                 0x08005bb8       0x94 ./Bspilot_Src/bshh_oled.o
                 0x08005bb8                BS_OLED_Show_Text
+ .text.BS_OLED_Show_Version
+                0x08005c4c       0x44 ./Bspilot_Src/bshh_oled.o
+                0x08005c4c                BS_OLED_Show_Version
  .text.BS_OLED_Show_Logo
-                0x08005c4c       0xa8 ./Bspilot_Src/bshh_oled.o
-                0x08005c4c                BS_OLED_Show_Logo
+                0x08005c90       0xa8 ./Bspilot_Src/bshh_oled.o
+                0x08005c90                BS_OLED_Show_Logo
  .text.BS_OLED_Show_Unlock
-                0x08005cf4       0x44 ./Bspilot_Src/bshh_oled.o
-                0x08005cf4                BS_OLED_Show_Unlock
- .text.BS_OLED_Show_Cal
                 0x08005d38       0x44 ./Bspilot_Src/bshh_oled.o
-                0x08005d38                BS_OLED_Show_Cal
+                0x08005d38                BS_OLED_Show_Unlock
+ .text.BS_OLED_Show_Cal
+                0x08005d7c       0x44 ./Bspilot_Src/bshh_oled.o
+                0x08005d7c                BS_OLED_Show_Cal
  .text.BS_OLED_Show_BLE_Clear
-                0x08005d7c       0x78 ./Bspilot_Src/bshh_oled.o
-                0x08005d7c                BS_OLED_Show_BLE_Clear
+                0x08005dc0       0x78 ./Bspilot_Src/bshh_oled.o
+                0x08005dc0                BS_OLED_Show_BLE_Clear
  .text.BS_OLED_Show_BLE_Test
-                0x08005df4       0x78 ./Bspilot_Src/bshh_oled.o
-                0x08005df4                BS_OLED_Show_BLE_Test
+                0x08005e38       0x78 ./Bspilot_Src/bshh_oled.o
+                0x08005e38                BS_OLED_Show_BLE_Test
  .text.BS_OLED_Configuration
-                0x08005e6c       0xbc ./Bspilot_Src/bshh_oled.o
-                0x08005e6c                BS_OLED_Configuration
+                0x08005eb0       0xc0 ./Bspilot_Src/bshh_oled.o
+                0x08005eb0                BS_OLED_Configuration
  .text.__libc_init_array
-                0x08005f28       0x50 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
-                0x08005f28                __libc_init_array
- .text.memset   0x08005f78       0x9c c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
-                0x08005f78                memset
+                0x08005f70       0x50 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
+                0x08005f70                __libc_init_array
+ .text.memset   0x08005fc0       0x9c c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+                0x08005fc0                memset
  .text.startup.register_fini
-                0x08006014       0x14 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
- .text.atexit   0x08006028        0xc c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
-                0x08006028                atexit
+                0x0800605c       0x14 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+ .text.atexit   0x08006070        0xc c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
+                0x08006070                atexit
  .text.__libc_fini_array
-                0x08006034       0x28 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
-                0x08006034                __libc_fini_array
+                0x0800607c       0x28 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
+                0x0800607c                __libc_fini_array
  .text.__register_exitproc
-                0x0800605c       0xa4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
-                0x0800605c                __register_exitproc
+                0x080060a4       0xa4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
+                0x080060a4                __register_exitproc
  *(.glue_7)
- .glue_7        0x08006100        0x0 linker stubs
+ .glue_7        0x08006148        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08006100        0x0 linker stubs
+ .glue_7t       0x08006148        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08006100        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x08006148        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
  *(.init)
- .init          0x08006100        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x08006100                _init
- .init          0x08006104        0x8 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .init          0x08006148        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x08006148                _init
+ .init          0x0800614c        0x8 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
  *(.fini)
- .fini          0x0800610c        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x0800610c                _fini
- .fini          0x08006110        0x8 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x08006118                . = ALIGN (0x4)
-                0x08006118                _etext = .
+ .fini          0x08006154        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x08006154                _fini
+ .fini          0x08006158        0x8 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x08006160                . = ALIGN (0x4)
+                0x08006160                _etext = .
 
-.vfp11_veneer   0x08006118        0x0
- .vfp11_veneer  0x08006118        0x0 linker stubs
+.vfp11_veneer   0x08006160        0x0
+ .vfp11_veneer  0x08006160        0x0 linker stubs
 
-.v4_bx          0x08006118        0x0
- .v4_bx         0x08006118        0x0 linker stubs
+.v4_bx          0x08006160        0x0
+ .v4_bx         0x08006160        0x0 linker stubs
 
-.iplt           0x08006118        0x0
- .iplt          0x08006118        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x08006160        0x0
+ .iplt          0x08006160        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.rodata         0x08006118      0xc78
-                0x08006118                . = ALIGN (0x4)
+.rodata         0x08006160      0xc78
+                0x08006160                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08006118       0x12 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .rodata        0x08006160       0x12 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
  *(.rodata*)
- *fill*         0x0800612a        0x2 
+ *fill*         0x08006172        0x2 
  .rodata.AHBPrescTable
-                0x0800612c       0x10 ./Src/system_stm32f1xx.o
-                0x0800612c                AHBPrescTable
+                0x08006174       0x10 ./Src/system_stm32f1xx.o
+                0x08006174                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800613c        0x8 ./Src/system_stm32f1xx.o
-                0x0800613c                APBPrescTable
+                0x08006184        0x8 ./Src/system_stm32f1xx.o
+                0x08006184                APBPrescTable
  .rodata.BS_NRF_TX_Configuration_Table
-                0x08006144       0x10 ./Bspilot_Src/bshh_nrf.o
-                0x08006144                BS_NRF_TX_Configuration_Table
+                0x0800618c       0x10 ./Bspilot_Src/bshh_nrf.o
+                0x0800618c                BS_NRF_TX_Configuration_Table
  .rodata.BS_NRF_TX_ADDR_Table
-                0x08006154        0xc ./Bspilot_Src/bshh_nrf.o
-                0x08006154                BS_NRF_TX_ADDR_Table
+                0x0800619c        0xc ./Bspilot_Src/bshh_nrf.o
+                0x0800619c                BS_NRF_TX_ADDR_Table
  .rodata.BS_OLED_Configuration_Table
-                0x08006160       0x1c ./Bspilot_Src/bshh_oled.o
-                0x08006160                BS_OLED_Configuration_Table
+                0x080061a8       0x1c ./Bspilot_Src/bshh_oled.o
+                0x080061a8                BS_OLED_Configuration_Table
  .rodata.OLED_NUM_SIZE_6x8
-                0x0800617c       0x66 ./Bspilot_Src/bshh_oled.o
-                0x0800617c                OLED_NUM_SIZE_6x8
- *fill*         0x080061e2        0x2 
+                0x080061c4       0x66 ./Bspilot_Src/bshh_oled.o
+                0x080061c4                OLED_NUM_SIZE_6x8
+ *fill*         0x0800622a        0x2 
  .rodata.OLED_FONT_SIZE_6x8
-                0x080061e4      0x228 ./Bspilot_Src/bshh_oled.o
-                0x080061e4                OLED_FONT_SIZE_6x8
+                0x0800622c      0x228 ./Bspilot_Src/bshh_oled.o
+                0x0800622c                OLED_FONT_SIZE_6x8
  .rodata.BS_OLED_DISPLAY_TEXT
-                0x0800640c      0x980 ./Bspilot_Src/bshh_oled.o
-                0x0800640c                BS_OLED_DISPLAY_TEXT
+                0x08006454      0x980 ./Bspilot_Src/bshh_oled.o
+                0x08006454                BS_OLED_DISPLAY_TEXT
  .rodata._global_impure_ptr
-                0x08006d8c        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
-                0x08006d8c                _global_impure_ptr
-                0x08006d90                . = ALIGN (0x4)
+                0x08006dd4        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
+                0x08006dd4                _global_impure_ptr
+                0x08006dd8                . = ALIGN (0x4)
 
-.rel.dyn        0x08006d90        0x0
- .rel.iplt      0x08006d90        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x08006dd8        0x0
+ .rel.iplt      0x08006dd8        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08006d90        0x0
-                0x08006d90                __exidx_start = .
+.ARM            0x08006dd8        0x0
+                0x08006dd8                __exidx_start = .
  *(.ARM.exidx*)
-                0x08006d90                __exidx_end = .
+                0x08006dd8                __exidx_end = .
 
-.preinit_array  0x08006d90        0x0
-                0x08006d90                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x08006dd8        0x0
+                0x08006dd8                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x08006d90                PROVIDE (__preinit_array_end, .)
+                0x08006dd8                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x08006d90        0x8
-                0x08006d90                PROVIDE (__init_array_start, .)
+.init_array     0x08006dd8        0x8
+                0x08006dd8                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  .init_array.00000
-                0x08006d90        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+                0x08006dd8        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x08006d94        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
-                0x08006d98                PROVIDE (__init_array_end, .)
+ .init_array    0x08006ddc        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+                0x08006de0                PROVIDE (__init_array_end, .)
 
-.fini_array     0x08006d98        0x4
-                0x08006d98                PROVIDE (__fini_array_start, .)
+.fini_array     0x08006de0        0x4
+                0x08006de0                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08006d98        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
-                0x08006d9c                PROVIDE (__fini_array_end, .)
-                0x08006d9c                _sidata = LOADADDR (.data)
+ .fini_array    0x08006de0        0x4 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+                0x08006de4                PROVIDE (__fini_array_end, .)
+                0x08006de4                _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x430 load address 0x08006d9c
+.data           0x20000000      0x430 load address 0x08006de4
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -4949,14 +4952,14 @@ LOAD c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv
                 0x20000430                . = ALIGN (0x4)
                 0x20000430                _edata = .
 
-.jcr            0x20000430        0x0 load address 0x080071cc
+.jcr            0x20000430        0x0 load address 0x08007214
  .jcr           0x20000430        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.igot.plt       0x20000430        0x0 load address 0x080071cc
+.igot.plt       0x20000430        0x0 load address 0x08007214
  .igot.plt      0x20000430        0x0 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
                 0x20000430                . = ALIGN (0x4)
 
-.bss            0x20000430      0x5dc load address 0x080071cc
+.bss            0x20000430      0x5dc load address 0x08007214
                 0x20000430                _sbss = .
                 0x20000430                __bss_start__ = _sbss
  *(.bss)
@@ -5025,7 +5028,7 @@ LOAD c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv
                 0x20000a0c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000a0c      0x604 load address 0x080071cc
+                0x20000a0c      0x604 load address 0x08007214
                 0x20000a10                . = ALIGN (0x8)
  *fill*         0x20000a0c        0x4 
                 [!provide]                PROVIDE (end, .)
@@ -5118,7 +5121,7 @@ LOAD c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv
                 0x000006a1       0x1d c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
 OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
 
-.debug_line     0x00000000     0xf60d
+.debug_line     0x00000000     0xf625
  .debug_line    0x00000000       0xb7 ./startup/startup_stm32f103xb.o
  .debug_line    0x000000b7      0x8df ./Src/main.o
  .debug_line    0x00000996      0x7fb ./Src/stm32f1xx_hal_msp.o
@@ -5144,9 +5147,9 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_line    0x0000d370      0x808 ./Bspilot_Src/bshh_event.o
  .debug_line    0x0000db78      0x75f ./Bspilot_Src/bshh_led.o
  .debug_line    0x0000e2d7      0x981 ./Bspilot_Src/bshh_nrf.o
- .debug_line    0x0000ec58      0x9b5 ./Bspilot_Src/bshh_oled.o
+ .debug_line    0x0000ec58      0x9cd ./Bspilot_Src/bshh_oled.o
 
-.debug_info     0x00000000     0xd23e
+.debug_info     0x00000000     0xd24f
  .debug_info    0x00000000       0xc2 ./startup/startup_stm32f103xb.o
  .debug_info    0x000000c2     0x12b9 ./Src/main.o
  .debug_info    0x0000137b     0x1181 ./Src/stm32f1xx_hal_msp.o
@@ -5172,9 +5175,9 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_info    0x0000c022      0x18e ./Bspilot_Src/bshh_event.o
  .debug_info    0x0000c1b0      0x183 ./Bspilot_Src/bshh_led.o
  .debug_info    0x0000c333      0x972 ./Bspilot_Src/bshh_nrf.o
- .debug_info    0x0000cca5      0x599 ./Bspilot_Src/bshh_oled.o
+ .debug_info    0x0000cca5      0x5aa ./Bspilot_Src/bshh_oled.o
 
-.debug_abbrev   0x00000000     0x28b2
+.debug_abbrev   0x00000000     0x28ca
  .debug_abbrev  0x00000000       0x12 ./startup/startup_stm32f103xb.o
  .debug_abbrev  0x00000012      0x219 ./Src/main.o
  .debug_abbrev  0x0000022b      0x1d7 ./Src/stm32f1xx_hal_msp.o
@@ -5200,9 +5203,9 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_abbrev  0x000023bf       0xc7 ./Bspilot_Src/bshh_event.o
  .debug_abbrev  0x00002486       0xcb ./Bspilot_Src/bshh_led.o
  .debug_abbrev  0x00002551      0x218 ./Bspilot_Src/bshh_nrf.o
- .debug_abbrev  0x00002769      0x149 ./Bspilot_Src/bshh_oled.o
+ .debug_abbrev  0x00002769      0x161 ./Bspilot_Src/bshh_oled.o
 
-.debug_aranges  0x00000000      0xd30
+.debug_aranges  0x00000000      0xd38
  .debug_aranges
                 0x00000000       0x28 ./startup/startup_stm32f103xb.o
  .debug_aranges
@@ -5254,9 +5257,9 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_aranges
                 0x00000c10       0x90 ./Bspilot_Src/bshh_nrf.o
  .debug_aranges
-                0x00000ca0       0x90 ./Bspilot_Src/bshh_oled.o
+                0x00000ca0       0x98 ./Bspilot_Src/bshh_oled.o
 
-.debug_ranges   0x00000000      0xb98
+.debug_ranges   0x00000000      0xba0
  .debug_ranges  0x00000000       0x20 ./startup/startup_stm32f103xb.o
  .debug_ranges  0x00000020       0x50 ./Src/main.o
  .debug_ranges  0x00000070       0x50 ./Src/stm32f1xx_hal_msp.o
@@ -5282,7 +5285,7 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_ranges  0x00000a50       0x30 ./Bspilot_Src/bshh_event.o
  .debug_ranges  0x00000a80       0x18 ./Bspilot_Src/bshh_led.o
  .debug_ranges  0x00000a98       0x80 ./Bspilot_Src/bshh_nrf.o
- .debug_ranges  0x00000b18       0x80 ./Bspilot_Src/bshh_oled.o
+ .debug_ranges  0x00000b18       0x88 ./Bspilot_Src/bshh_oled.o
 
 .debug_macro    0x00000000    0x1bd98
  .debug_macro   0x00000000      0x33c ./Src/main.o
@@ -5372,7 +5375,7 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_macro   0x0001ba2b       0x3a ./Bspilot_Src/bshh_nrf.o
  .debug_macro   0x0001ba65      0x333 ./Bspilot_Src/bshh_oled.o
 
-.debug_str      0x00000000    0x90b72
+.debug_str      0x00000000    0x90b87
  .debug_str     0x00000000    0x8da77 ./Src/main.o
                               0x8dec1 (size before relaxing)
  .debug_str     0x0008da77      0x124 ./Src/stm32f1xx_hal_msp.o
@@ -5421,8 +5424,8 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
                               0x8cc7a (size before relaxing)
  .debug_str     0x000905d1      0x360 ./Bspilot_Src/bshh_nrf.o
                               0x8d730 (size before relaxing)
- .debug_str     0x00090931      0x241 ./Bspilot_Src/bshh_oled.o
-                              0x8d183 (size before relaxing)
+ .debug_str     0x00090931      0x256 ./Bspilot_Src/bshh_oled.o
+                              0x8d198 (size before relaxing)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e ./Src/main.o
@@ -5452,7 +5455,7 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .comment       0x0000006e       0x6f ./Bspilot_Src/bshh_nrf.o
  .comment       0x0000006e       0x6f ./Bspilot_Src/bshh_oled.o
 
-.debug_frame    0x00000000     0x33bc
+.debug_frame    0x00000000     0x33d8
  .debug_frame   0x00000000      0x128 ./Src/main.o
  .debug_frame   0x00000128      0x15c ./Src/stm32f1xx_hal_msp.o
  .debug_frame   0x00000284      0x144 ./Src/stm32f1xx_it.o
@@ -5477,10 +5480,10 @@ OUTPUT(Remoter_bs2017hh_release.elf elf32-littlearm)
  .debug_frame   0x00002d3c       0xa4 ./Bspilot_Src/bshh_event.o
  .debug_frame   0x00002de0       0x50 ./Bspilot_Src/bshh_led.o
  .debug_frame   0x00002e30      0x228 ./Bspilot_Src/bshh_nrf.o
- .debug_frame   0x00003058      0x22c ./Bspilot_Src/bshh_oled.o
- .debug_frame   0x00003284       0x2c c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
- .debug_frame   0x000032b0       0x34 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
- .debug_frame   0x000032e4       0x50 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
- .debug_frame   0x00003334       0x20 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
- .debug_frame   0x00003354       0x34 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
- .debug_frame   0x00003388       0x34 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
+ .debug_frame   0x00003058      0x248 ./Bspilot_Src/bshh_oled.o
+ .debug_frame   0x000032a0       0x2c c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
+ .debug_frame   0x000032cc       0x34 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+ .debug_frame   0x00003300       0x50 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00003350       0x20 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
+ .debug_frame   0x00003370       0x34 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
+ .debug_frame   0x000033a4       0x34 c:/elipse_arm_ide/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)

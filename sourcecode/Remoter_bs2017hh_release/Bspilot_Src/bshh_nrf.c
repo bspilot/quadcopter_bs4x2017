@@ -99,28 +99,28 @@ void bshh_nrf_status_check(void)
 		BS_NRF_CS_HIGH();
 		nrf_status=nrf_rd_reg_buf[1];
 		//
-		if(nrf_status & 0x40) 						//bspilot: nrf receive data
+		if(nrf_status & 0x40)
 		{
 			nrf_receive_times++;
 			bshh_nrf_show_rx_data();
 		}
-		else if(nrf_status & 0x20)  				//bspilot: nrf send ok
+		else if(nrf_status & 0x20)
 		{
 			nrf_send_times++;
-			BS_NRF_CE_LOW();						//bspilot: stop the send
+			BS_NRF_CE_LOW();
 		}
-		else if(nrf_status & 0x10)					//bspilot: nrf send fail
+		else if(nrf_status & 0x10)
 		{
 			nrf_error_times++;
-			BS_NRF_CE_LOW();						//bspilot: stop the send
+			BS_NRF_CE_LOW();
 			nrf_wr_reg_buf[0]=0x0e1;
 			nrf_wr_reg_buf[1]=0x0ff;
-			bshh_nrf_write_reg(nrf_wr_reg_buf);		//bspilot: clear the tx buffer
+			bshh_nrf_write_reg(nrf_wr_reg_buf);
 		}
 		//
 		nrf_wr_reg_buf[0]=0x27;
 		nrf_wr_reg_buf[1]=nrf_status;
-		bshh_nrf_write_reg(nrf_wr_reg_buf);			//bspilot: clear the status
+		bshh_nrf_write_reg(nrf_wr_reg_buf);
 	}
 }
 

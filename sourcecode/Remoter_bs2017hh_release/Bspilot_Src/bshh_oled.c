@@ -138,6 +138,17 @@ void BS_OLED_Show_Text(uint8_t row,uint8_t column,uint8_t offset)
     for(i=0;i<16;i++) BS_OLED_Write_Data(BS_OLED_DISPLAY_TEXT[offset*2+1][i]);
 }
 
+
+void BS_OLED_Show_Version(void)
+{
+	BS_OLED_Show_Char(6,42,'H');
+	BS_OLED_Show_Char(6,48,'1');
+	BS_OLED_Show_Char(6,54,'7');
+	BS_OLED_Show_Char(6,60,'-');
+	BS_OLED_Show_Char(6,66,'0');
+	BS_OLED_Show_Char(6,72,'1');
+}
+
 void BS_OLED_Show_Logo(uint8_t inv)
 {
 	if(inv)
@@ -241,15 +252,16 @@ void BS_OLED_Configuration(void)
 	BS_OLED_RST_HIGH();
 	BS_OLED_DC_HIGH();
 	BS_OLED_CS_HIGH();
-	BS_OLED_Delay_ms(10);		//bspilot:delay 10ms
+	BS_OLED_Delay_ms(10);
 	BS_OLED_RST_LOW();
-	BS_OLED_Delay_ms(50);		//bspilot:delay 10ms
+	BS_OLED_Delay_ms(50);
 	BS_OLED_RST_HIGH();
 	//
 	for(i=0;i<28;i++) BS_OLED_Write_Command(BS_OLED_Configuration_Table[i]);
 	BS_OLED_Clear_Screen();
 	BS_OLED_Set_Cursor(0,0);
 	//
+	BS_OLED_Show_Version();
 	BS_OLED_Show_Logo(0);
 	BS_OLED_Show_Unlock(0);
 	BS_OLED_Show_Cal(0);

@@ -58,17 +58,17 @@ void bshh_ctrl_joystick(uint16_t js_throttle,uint16_t js_pitch,uint16_t js_roll,
 {
 	uint8_t i;
 
-	bshh_ctrl_throttle=js_throttle>>4; 	//bspilot: 0-255
-	bshh_ctrl_pitch=js_pitch>>6;        //bspilot: 0-63
-	bshh_ctrl_roll=js_roll>>6;          //bspilot: 0-63
-	bshh_ctrl_yaw=js_yaw>>6;            //bspilot: 0-63
+	bshh_ctrl_throttle=js_throttle>>4;
+	bshh_ctrl_pitch=js_pitch>>6;
+	bshh_ctrl_roll=js_roll>>6;
+	bshh_ctrl_yaw=js_yaw>>6;
 	//
-	if(js_pitch<2048) bshh_ctrl_pitch=(31-bshh_ctrl_pitch)|0x80;	//bspilot:0-31
-	else  bshh_ctrl_pitch-=32;										//bspilot:0-31
-	if(js_roll<2048) bshh_ctrl_roll=(31-bshh_ctrl_roll)|0x80;		//bspilot:0-31
-	else  bshh_ctrl_roll-=32;										//bspilot:0-31
-	if(js_yaw<2048) bshh_ctrl_yaw=(31-bshh_ctrl_yaw)|0x80;			//bspilot:0-31
-	else bshh_ctrl_yaw-=32;											//bspilot:0-31
+	if(js_pitch<2048) bshh_ctrl_pitch=(31-bshh_ctrl_pitch)|0x80;
+	else  bshh_ctrl_pitch-=32;
+	if(js_roll<2048) bshh_ctrl_roll=(31-bshh_ctrl_roll)|0x80;
+	else  bshh_ctrl_roll-=32;
+	if(js_yaw<2048) bshh_ctrl_yaw=(31-bshh_ctrl_yaw)|0x80;
+	else bshh_ctrl_yaw-=32;
 	//
 	for(i=0;i<32;i++) bshh_ctrl_command_table[i]=32;
 	bshh_ctrl_command_len=11;
