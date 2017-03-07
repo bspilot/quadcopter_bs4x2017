@@ -36,6 +36,7 @@
 #include "bshh_event.h"
 #include "bshh_oled.h"
 #include "bshh_adc.h"
+#include "bshh_ble.h"
 #include "bshh_nrf.h"
 #include "bshh_button.h"
 
@@ -43,13 +44,11 @@
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
+
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
-
 SPI_HandleTypeDef hspi2;
-
 UART_HandleTypeDef huart3;
-
 PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
@@ -307,7 +306,7 @@ static void MX_USART3_UART_Init(void)
 /* USB init function */
 static void MX_USB_PCD_Init(void)
 {
-
+  /*
   hpcd_USB_FS.Instance = USB;
   hpcd_USB_FS.Init.dev_endpoints = 8;
   hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
@@ -319,6 +318,7 @@ static void MX_USB_PCD_Init(void)
   {
     Error_Handler();
   }
+  */
 
 }
 

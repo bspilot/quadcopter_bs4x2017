@@ -43,10 +43,10 @@ void bshh_button_key_detect(void)
 			if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5)==GPIO_PIN_RESET)
 			{
 				bshh_beep_once();
-				bshh_ctrl_cal();
-				BS_OLED_Show_Cal(1);
+				bshh_ctrl_unlock();
+				BS_OLED_Show_Unlock(1);
 				while(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5)==GPIO_PIN_RESET);
-				BS_OLED_Show_Cal(0);
+				BS_OLED_Show_Unlock(0);
 			}
 		}
 		else if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_6)==GPIO_PIN_RESET)
@@ -67,11 +67,10 @@ void bshh_button_key_detect(void)
 			if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_7)==GPIO_PIN_RESET)
 			{
 				bshh_beep_once();
-				if(bshh_adc_channel_index<6) bshh_adc_channel_index++;
-				bshh_adc_display();
-				BS_OLED_Show_Logo(1);
+				bshh_ctrl_highoff();
+				BS_OLED_Show_HighOff_Mode(1);
 				while(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_7)==GPIO_PIN_RESET);
-				BS_OLED_Show_Logo(0);
+				BS_OLED_Show_HighOff_Mode(0);
 			}
 		}
 		else if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13)==GPIO_PIN_RESET)
@@ -80,11 +79,10 @@ void bshh_button_key_detect(void)
 			if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13)==GPIO_PIN_RESET)
 			{
 				bshh_beep_once();
-				if(bshh_adc_channel_index>0) bshh_adc_channel_index--;
-				bshh_adc_display();
-				BS_OLED_Show_Logo(1);
+				bshh_ctrl_highon();
+				BS_OLED_Show_HighOn_Mode(1);
 				while(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13)==GPIO_PIN_RESET);
-				BS_OLED_Show_Logo(0);
+				BS_OLED_Show_HighOn_Mode(0);
 			}
 		}
 		else if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_14)==GPIO_PIN_RESET)
@@ -93,10 +91,10 @@ void bshh_button_key_detect(void)
 			if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_14)==GPIO_PIN_RESET)
 			{
 				bshh_beep_once();
-				bshh_ctrl_unlock();
-				BS_OLED_Show_Unlock(1);
+				bshh_ctrl_cal();
+				BS_OLED_Show_Cal(1);
 				while(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_14)==GPIO_PIN_RESET);
-				BS_OLED_Show_Unlock(0);
+				BS_OLED_Show_Cal(0);
 			}
 		}
 		else if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_15)==GPIO_PIN_RESET)

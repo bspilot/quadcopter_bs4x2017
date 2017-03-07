@@ -20,18 +20,18 @@
 #define BS_NRF_CE_LOW() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_RESET)  //BSHH PB4 is CE
 #define BS_NRF_CE_HIGH() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_SET)
 
-static void bshh_nrf_delay_ms(unsigned int dly);
-static void bshh_nrf_write_reg(uint8_t *reg_buf);
-static void bshh_nrf_write_buffer(uint8_t reg,uint8_t value);
-static void bshh_nrf_write_addr_tx(uint8_t index);
-static void bshh_nrf_write_addr_rx(uint8_t index);
-static void bshh_nrf_show_rx_data(void);
-static void bshh_nrf_show_tx_addr(void);
-static void bshh_nrf_show_rx_addr(void);
-static void bshh_nrf_tx_configuration(void);
-static void bshh_nrf_rx_configuration(void);
-static void bshh_nrf_transmit(uint8_t *data_ptr);
-static void bshh_nrf_receive(void);
+void bshh_nrf_delay_ms(unsigned int dly);
+void bshh_nrf_write_reg(uint8_t *reg_buf);
+void bshh_nrf_write_buffer(uint8_t reg,uint8_t value);
+void bshh_nrf_write_addr_tx(uint8_t index);
+void bshh_nrf_write_addr_rx(uint8_t index);
+void bshh_nrf_show_rx_data(void);
+void bshh_nrf_show_tx_addr(void);
+void bshh_nrf_show_rx_addr(void);
+void bshh_nrf_tx_configuration(void);
+void bshh_nrf_rx_configuration(void);
+void bshh_nrf_transmit(uint8_t *data_ptr);
+void bshh_nrf_receive(void);
 
 void bshh_nrf_configuration(void);
 void bshh_nrf_send_ctrl_data(uint8_t *ctrl_data);

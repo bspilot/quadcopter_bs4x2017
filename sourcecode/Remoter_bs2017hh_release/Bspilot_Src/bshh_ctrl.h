@@ -23,5 +23,7 @@ uint8_t bshh_ctrl_checksum(uint8_t data_len, uint8_t *data_buffer);
 void bshh_ctrl_joystick(uint16_t js_throttle,uint16_t js_pitch,uint16_t js_roll,uint16_t js_yaw);
 void bshh_ctrl_cal(void);
 void bshh_ctrl_unlock(void);
+void bshh_ctrl_highon(void);
+void bshh_ctrl_highoff(void);
 
 #endif

@@ -177,13 +177,13 @@ void BS_OLED_Show_Unlock(uint8_t inv)
 {
 	if(inv)
 	{
-		BS_OLED_Show_Text(6,0,16);
-		BS_OLED_Show_Text(6,18,17);
+		BS_OLED_Show_Text(6,90,16);
+		BS_OLED_Show_Text(6,108,17);
 	}
 	else
 	{
-		BS_OLED_Show_Text(6,0,14);
-		BS_OLED_Show_Text(6,18,15);
+		BS_OLED_Show_Text(6,90,14);
+		BS_OLED_Show_Text(6,108,15);
 	}
 }
 
@@ -191,13 +191,13 @@ void BS_OLED_Show_Cal(uint8_t inv)
 {
 	if(inv)
 	{
-		BS_OLED_Show_Text(6,90,20);
-		BS_OLED_Show_Text(6,108,21);
+		BS_OLED_Show_Text(6,0,20);
+		BS_OLED_Show_Text(6,18,21);
 	}
 	else
 	{
-		BS_OLED_Show_Text(6,90,18);
-		BS_OLED_Show_Text(6,108,19);
+		BS_OLED_Show_Text(6,0,18);
+		BS_OLED_Show_Text(6,18,19);
 	}
 }
 
@@ -228,17 +228,63 @@ void BS_OLED_Show_BLE_Test(uint8_t inv)
 	{
 		if(inv)
 		{
-			BS_OLED_Show_Text(2,0,34);
-			BS_OLED_Show_Text(2,18,35);
-			BS_OLED_Show_Text(2,36,36);
-			BS_OLED_Show_Text(2,54,37);
+			BS_OLED_Show_Text(4,0,34);
+			BS_OLED_Show_Text(4,18,35);
+			BS_OLED_Show_Text(4,36,36);
+			BS_OLED_Show_Text(4,54,37);
 		}
 		else
 		{
-			BS_OLED_Show_Text(2,0,30);
-			BS_OLED_Show_Text(2,18,31);
-			BS_OLED_Show_Text(2,36,32);
-			BS_OLED_Show_Text(2,54,33);
+			BS_OLED_Show_Text(4,0,30);
+			BS_OLED_Show_Text(4,18,31);
+			BS_OLED_Show_Text(4,36,32);
+			BS_OLED_Show_Text(4,54,33);
+		}
+	}
+}
+
+void BS_OLED_Show_HighOn_Mode(uint8_t inv)
+{
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE)
+	{
+		if(inv)
+		{
+			BS_OLED_Show_Text(2,36,43);
+			BS_OLED_Show_Text(2,54,44);
+			BS_OLED_Show_Text(2,72,45);
+			BS_OLED_Show_Text(2,90,46);
+			BS_OLED_Show_Text(2,108,47);
+		}
+		else
+		{
+			BS_OLED_Show_Text(2,36,38);
+			BS_OLED_Show_Text(2,54,39);
+			BS_OLED_Show_Text(2,72,40);
+			BS_OLED_Show_Text(2,90,41);
+			BS_OLED_Show_Text(2,108,42);
+		}
+	}
+}
+
+void BS_OLED_Show_HighOff_Mode(uint8_t inv)
+{
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE)
+	{
+		if(inv)
+		{
+			BS_OLED_Show_Text(2,36,53);
+			BS_OLED_Show_Text(2,54,54);
+			BS_OLED_Show_Text(2,72,55);
+			BS_OLED_Show_Text(2,90,56);
+			BS_OLED_Show_Text(2,108,57);
+		}
+		else
+		{
+			BS_OLED_Show_Text(2,36,48);
+			BS_OLED_Show_Text(2,54,49);
+			BS_OLED_Show_Text(2,72,50);
+			BS_OLED_Show_Text(2,90,51);
+			BS_OLED_Show_Text(2,108,52);
 		}
 	}
 }
@@ -261,12 +307,13 @@ void BS_OLED_Configuration(void)
 	BS_OLED_Clear_Screen();
 	BS_OLED_Set_Cursor(0,0);
 	//
-	BS_OLED_Show_Version();
 	BS_OLED_Show_Logo(0);
 	BS_OLED_Show_Unlock(0);
 	BS_OLED_Show_Cal(0);
 	BS_OLED_Show_BLE_Test(0);
 	BS_OLED_Show_BLE_Clear(0);
+	BS_OLED_Show_HighOn_Mode(0);
+	BS_OLED_Show_HighOff_Mode(0);
 }
 
 

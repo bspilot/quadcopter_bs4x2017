@@ -31,7 +31,7 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-Remoter_bs2017hh_release.hex \
+Remoter_bs2017hh_release.bin \
 
 SECONDARY_SIZE += \
 Remoter_bs2017hh_release.siz \
@@ -48,9 +48,9 @@ Remoter_bs2017hh_release.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Remoter_bs2017hh_release.hex: Remoter_bs2017hh_release.elf
+Remoter_bs2017hh_release.bin: Remoter_bs2017hh_release.elf
 	@echo 'Invoking: Cross ARM GNU Create Flash Image'
-	arm-none-eabi-objcopy -O ihex "Remoter_bs2017hh_release.elf"  "Remoter_bs2017hh_release.hex"
+	arm-none-eabi-objcopy -O binary "Remoter_bs2017hh_release.elf"  "Remoter_bs2017hh_release.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

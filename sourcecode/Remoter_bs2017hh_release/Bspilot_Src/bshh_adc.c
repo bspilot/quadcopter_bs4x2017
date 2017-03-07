@@ -20,7 +20,7 @@
 
 extern ADC_HandleTypeDef hadc1;
 uint16_t bshh_adc_buffer[7];
-uint8_t bshh_adc_channel_index=0;
+uint32_t bat_vol;
 
 void bshh_adc_delay_ms(unsigned int dly)
 {
@@ -34,7 +34,9 @@ void bshh_adc_start(void)
 
 void bshh_adc_display(void)
 {
-	BS_OLED_Show_Char(7,42,bshh_adc_channel_index+48);
-	BS_OLED_Show_Char(7,48,'-');
-	BS_OLED_Show_Number(7,54,bshh_adc_buffer[bshh_adc_channel_index]);
+	bat_vol=bshh_adc_buffer[4];
+	bat_vol=(bat_vol*3300)>>11;
+	BS_OLED_Show_Number(7,42,bat_vol);
+	BS_OLED_Show_Char(7,66,'m');
+	BS_OLED_Show_Char(7,72,'V');
 }

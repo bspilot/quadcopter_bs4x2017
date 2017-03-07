@@ -42,5 +42,7 @@ void BS_OLED_Show_Unlock(uint8_t inv);
 void BS_OLED_Show_Cal(uint8_t inv);
 void BS_OLED_Show_BLE_Clear(uint8_t inv);
 void BS_OLED_Show_BLE_Test(uint8_t inv);
+void BS_OLED_Show_HighOn_Mode(uint8_t inv);
+void BS_OLED_Show_HighOff_Mode(uint8_t inv);
 
 #endif

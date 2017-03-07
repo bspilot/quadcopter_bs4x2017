@@ -24,6 +24,7 @@ extern UART_HandleTypeDef huart3;
 //
 uint8_t ble_command_table[32];
 uint8_t ble_status_buffer[32];
+uint8_t ble_receive_buffer[32];
 uint16_t ble_command_len=0;
 uint16_t ble_status_len=0;
 
@@ -47,10 +48,24 @@ void bshh_ble_show_command(uint8_t row, uint8_t *status_ptr, uint16_t status_len
 	}
 }
 
-
-void bshh_ble_send_ctrl_data(uint8_t *command_table, uint8_t command_len)
+void bshh_ble_show_data(uint8_t row, uint8_t *status_ptr, uint16_t status_len)
 {
-	if(bshh_nrf_ble_mode==BSHH_BLE_MODE) HAL_UART_Transmit(&huart3, command_table, command_len, 100);
+	uint8_t i;
+	//
+	for(i=0;i<status_len;i++)
+	{
+		BS_OLED_Show_Char(row,i*6,status_ptr[i]);
+	}
+}
+
+void bshh_ble_send_remote_command(uint8_t *command_table, uint8_t command_len)
+{
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE) HAL_UART_Transmit(&huart3, command_table, command_len, 200);
+}
+
+void bshh_ble_send_ctrl_command(uint8_t *command_table, uint8_t command_len)
+{
+	if(bshh_nrf_ble_mode==BSHH_BLE_MODE) HAL_UART_Transmit(&huart3, command_table, command_len, 1000);
 }
 
 void bshh_ble_AT_Test(void)
@@ -69,7 +84,7 @@ void bshh_ble_AT_Test(void)
 	HAL_UART_Transmit(&huart3, ble_command_table, ble_command_len, 1000);
 	HAL_UART_Receive(&huart3, ble_status_buffer, ble_status_len, 1000);
 	//
-	bshh_ble_show_command(3, ble_status_buffer, ble_status_len);
+	bshh_ble_show_command(5, ble_status_buffer, ble_status_len);
 }
 
 void bshh_ble_AT_Clear(void)
@@ -88,7 +103,7 @@ void bshh_ble_AT_Clear(void)
 	HAL_UART_Transmit(&huart3, ble_command_table, ble_command_len, 1000);
 	HAL_UART_Receive(&huart3, ble_status_buffer, ble_status_len, 1000);
 	//
-	bshh_ble_show_command(4, ble_status_buffer, ble_status_len);
+	bshh_ble_show_command(5, ble_status_buffer, ble_status_len);
 }
 
 
