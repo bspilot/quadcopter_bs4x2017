@@ -11,18 +11,20 @@
   * Redistribution and use in source and binary forms must retain the above copyright notice.
   **********************************************************************************************
  **/
-
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "bs4x_led.h"
+#include "bs4x_button.h"
 
-void bs4x_led_delay_ms(unsigned int dly)
+uint8_t bshh_nrf_ble_mode;
+
+void bshh_button_delay_ms(unsigned int dly)
 {
 	HAL_Delay(dly);
 }
 
-void bs4x_led_toggle(void)
+void bs4x_button_mode_detect(void)
 {
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_2);
+	if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_15)==GPIO_PIN_RESET) bshh_nrf_ble_mode=BS4X_BLE_MODE;
+	else bs4x_nrf_ble_mode=BS4X_NRF_MODE;
 }
 

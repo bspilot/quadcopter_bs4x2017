@@ -12,17 +12,14 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bs4x_led.h"
+#ifndef __BS4X_BUTTON_H
+#define __BS4X_BUTTON_H
 
-void bs4x_led_delay_ms(unsigned int dly)
-{
-	HAL_Delay(dly);
-}
+extern uint8_t bs4x_nrf_ble_mode;
 
-void bs4x_led_toggle(void)
-{
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_2);
-}
+#define BS4X_NRF_MODE 0
+#define BS4X_BLE_MODE 1
 
+void bs4x_button_delay_ms(unsigned int dly);
+
+#endif

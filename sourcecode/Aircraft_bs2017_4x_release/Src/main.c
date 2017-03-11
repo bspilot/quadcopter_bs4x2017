@@ -33,7 +33,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_hal.h"
+#include "bs4x_event.h"
 #include "bs4x_led.h"
+#include "bs4x_ble.h"
+#include "bs4x_mpu6050.h"
+#include "bs4x_nrf.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -59,6 +63,8 @@ PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+extern uint8_t bs4x_ble_receive_data_buf[64];
+extern uint8_t mpu6050_addr[2];
 
 /* USER CODE END PV */
 
@@ -114,7 +120,18 @@ int main(void)
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
-
+  bs4x_ble_send_string("bs4x ble is ready\r\n");
+  bs4x_ble_receive_data();
+  HAL_Delay(200);
+  bs4x_ble_send_string("read mpu6050 id:");
+  bs4x_mpu6050_whoami();
+  HAL_Delay(200);
+  bs4x_ble_send_char(mpu6050_addr,1);
+  HAL_Delay(200);
+  bs4x_nrf_configuration();
+  HAL_Delay(200);
+  bs4x_nrf_show_rx_addr();
+  HAL_Delay(200);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -122,8 +139,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-	  bs4x_ble_delay_ms(500);
-	  bs4x_led_toggle();
+	  bs4x_event_loop();
   /* USER CODE BEGIN 3 */
 
   }
@@ -415,23 +431,19 @@ static void MX_USB_PCD_Init(void)
   */
 static void MX_DMA_Init(void) 
 {
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA1_CLK_ENABLE();
+	  /* DMA controller clock enable */
+	  __HAL_RCC_DMA1_CLK_ENABLE();
 
-  /* DMA interrupt init */
-  /* DMA1_Channel1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
-  /* DMA1_Channel2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel2_IRQn);
-  /* DMA1_Channel4_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
-  /* DMA1_Channel5_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
-
+	  /* DMA interrupt init */
+	  /* DMA1_Channel1_IRQn interrupt configuration */
+	  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 2, 0);
+	  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+	  /* DMA1_Channel4_IRQn interrupt configuration */
+	  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 3, 0);
+	  HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
+	  /* DMA1_Channel5_IRQn interrupt configuration */
+	  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 4, 0);
+	  HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
 }
 
 /** Configure pins as 
@@ -547,6 +559,18 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
+{
+    uint8_t i,k;
+    //
+    for(i=0;i<4;i++) {if(bs4x_ble_receive_data_buf[i]=='r') k=i;}
+    if((bs4x_ble_receive_data_buf[k+1]=='s')&&(bs4x_ble_receive_data_buf[k+2]=='t'))
+	{
+    	bs4x_ble_send_string("bs4x reset\r\n");
+    	HAL_Delay(1000);
+    	NVIC_SystemReset();
+	}
+}
 
 /* USER CODE END 4 */
 

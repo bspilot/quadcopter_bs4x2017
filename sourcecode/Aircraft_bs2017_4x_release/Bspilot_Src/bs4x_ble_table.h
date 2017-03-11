@@ -12,17 +12,13 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bs4x_led.h"
+#ifndef __BS4X_BLE_FONT_H
+#define __BS4X_BLE_FONT_H
 
-void bs4x_led_delay_ms(unsigned int dly)
+const unsigned char BS_BLE_NUM_Table[]=
 {
-	HAL_Delay(dly);
-}
+0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,
+0x41,0x42,0x43,0x44,0x45,0x46,
+};
 
-void bs4x_led_toggle(void)
-{
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_2);
-}
-
+#endif

@@ -14,15 +14,21 @@
 
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "bs4x_led.h"
-
-void bs4x_led_delay_ms(unsigned int dly)
+#include "bs4x_mpu6050.h"
+#include "bs4x_ble.h"
+//
+extern I2C_HandleTypeDef hi2c1;
+//
+uint8_t mpu6050_addr[2];
+//
+void bs4x_mpu6050_delay_ms(unsigned int dly)
 {
 	HAL_Delay(dly);
 }
 
-void bs4x_led_toggle(void)
+void bs4x_mpu6050_whoami(void)
 {
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_2);
+	HAL_I2C_Mem_Read(&hi2c1, 0xd0, 0x75, 0x01, mpu6050_addr, 0x01, 100);
 }
+
 

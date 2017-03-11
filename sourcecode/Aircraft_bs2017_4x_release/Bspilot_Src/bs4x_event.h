@@ -12,17 +12,14 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bs4x_led.h"
+#ifndef __BS4X_EVENT_H
+#define __BS4X_EVENT_H
 
-void bs4x_led_delay_ms(unsigned int dly)
-{
-	HAL_Delay(dly);
-}
+void bs4x_event_delay_ms(unsigned int dly);
+void bs4x_event_loop(void);
+void bs4x_led_event(void);
+void bs4x_ble_send_event(void);
+void bs4x_nrf_check_event(void);
+void bs4x_system_reset_event(void);
 
-void bs4x_led_toggle(void)
-{
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_2);
-}
-
+#endif

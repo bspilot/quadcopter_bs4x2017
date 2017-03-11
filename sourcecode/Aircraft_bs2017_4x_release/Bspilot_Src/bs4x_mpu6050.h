@@ -12,17 +12,10 @@
   **********************************************************************************************
  **/
 
-#include "main.h"
-#include "stm32f1xx_hal.h"
-#include "bs4x_led.h"
-
-void bs4x_led_delay_ms(unsigned int dly)
-{
-	HAL_Delay(dly);
-}
-
-void bs4x_led_toggle(void)
-{
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_2);
-}
-
+#ifndef __BS4X_MPU6050_H
+#define __BS4X_MPU6050_H
+//
+void bs4x_mpu6050_delay_ms(unsigned int dly);
+void bs4x_mpu6050_whoami(void);
+//
+#endif
