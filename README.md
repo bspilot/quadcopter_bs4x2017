@@ -4,5 +4,5 @@ The open documents include the schematic, sourcode.
 You can visit our website http://www.bspilot.com to get more information, or send the email to support@bspilot.com.
 
 License:
-These open source software and handware can only be used for personal study. 
+These open source software and hardware can only be used for personal study. 
 Without authorization,any individuality or group can't use it for commercial purpose.

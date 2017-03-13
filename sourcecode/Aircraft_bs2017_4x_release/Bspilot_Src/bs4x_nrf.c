@@ -6,9 +6,10 @@
   *You can visit our web-site www.bspilot.com to get more information,
   *or send the email to support@bspilot.com.
   *
-  * COPYRIGHT(c) 2017 Dr.R&D (www.bspilot.com)
-  *
-  * Redistribution and use in source and binary forms must retain the above copyright notice.
+  *COPYRIGHT(c) 2017 Dr.R&D (www.bspilot.com)
+  *These open source software and hardware can only be used for personal study.
+  *Without authorization,any individuality or group can't use it for commercial purpose.
+  *Redistribution and use in source and binary forms must retain the above copyright notice.
   **********************************************************************************************
  **/
 
@@ -37,12 +38,12 @@ void bs4x_nrf_configuration(void)
 	if(bs4x_nrf_ble_mode==BS4X_NRF_MODE)
 	{
 	#ifdef BS4X_NRF_RECEIVE
-		bs4x_ble_send_string("bs4x nrf rx\r\n");
+		bs4x_ble_send_string("bs4x nrf rx addr:");
 		HAL_Delay(200);
 		bs4x_nrf_rx_configuration();
 		bs4x_nrf_receive();
 	#else
-		bs4x_ble_send_string("bs4x nrf tx\r\n");
+		bs4x_ble_send_string("bs4x nrf tx addr:");
 		HAL_Delay(200);
 		bs4x_nrf_tx_configuration();
 	#endif

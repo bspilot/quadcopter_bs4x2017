@@ -33,8 +33,7 @@ Bspilot_Src/bs4x_mpu6050.o: \
  C:\elipse_arm_ide\workspace_release\Aircraft_bs2017_4x_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pcd.h \
  C:\elipse_arm_ide\workspace_release\Aircraft_bs2017_4x_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_ll_usb.h \
  C:\elipse_arm_ide\workspace_release\Aircraft_bs2017_4x_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pcd_ex.h \
- C:/elipse_arm_ide/workspace_release/Aircraft_bs2017_4x_release/Bspilot_Src/bs4x_mpu6050.h \
- C:/elipse_arm_ide/workspace_release/Aircraft_bs2017_4x_release/Bspilot_Src/bs4x_ble.h
+ C:/elipse_arm_ide/workspace_release/Aircraft_bs2017_4x_release/Bspilot_Src/bs4x_mpu6050.h
 
 C:\elipse_arm_ide\workspace_release\Aircraft_bs2017_4x_release\Inc/main.h:
 
@@ -103,5 +102,3 @@ C:\elipse_arm_ide\workspace_release\Aircraft_bs2017_4x_release\Drivers\STM32F1xx
 C:\elipse_arm_ide\workspace_release\Aircraft_bs2017_4x_release\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pcd_ex.h:
 
 C:/elipse_arm_ide/workspace_release/Aircraft_bs2017_4x_release/Bspilot_Src/bs4x_mpu6050.h:
-
-C:/elipse_arm_ide/workspace_release/Aircraft_bs2017_4x_release/Bspilot_Src/bs4x_ble.h:

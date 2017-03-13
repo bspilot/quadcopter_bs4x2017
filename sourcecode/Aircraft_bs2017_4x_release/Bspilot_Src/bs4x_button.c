@@ -6,11 +6,13 @@
   *You can visit our web-site www.bspilot.com to get more information,
   *or send the email to support@bspilot.com.
   *
-  * COPYRIGHT(c) 2017 Dr.R&D (www.bspilot.com)
-  *
-  * Redistribution and use in source and binary forms must retain the above copyright notice.
+  *COPYRIGHT(c) 2017 Dr.R&D (www.bspilot.com)
+  *These open source software and hardware can only be used for personal study.
+  *Without authorization,any individuality or group can't use it for commercial purpose.
+  *Redistribution and use in source and binary forms must retain the above copyright notice.
   **********************************************************************************************
  **/
+
 #include "main.h"
 #include "stm32f1xx_hal.h"
 #include "bs4x_button.h"

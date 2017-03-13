@@ -6,18 +6,19 @@
   *You can visit our web-site www.bspilot.com to get more information,
   *or send the email to support@bspilot.com.
   *
-  * COPYRIGHT(c) 2017 Dr.R&D (www.bspilot.com)
-  *
-  * Redistribution and use in source and binary forms must retain the above copyright notice.
+  *COPYRIGHT(c) 2017 Dr.R&D (www.bspilot.com)
+  *These open source software and hardware can only be used for personal study.
+  *Without authorization,any individuality or group can't use it for commercial purpose.
+  *Redistribution and use in source and binary forms must retain the above copyright notice.
   **********************************************************************************************
  **/
 
 #ifndef __BSHH_NRF_H
 #define __BSHH_NRF_H
 
-#define BS_NRF_CS_LOW() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,GPIO_PIN_RESET)  //BSHH PB3 is CSN
+#define BS_NRF_CS_LOW() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,GPIO_PIN_RESET)
 #define BS_NRF_CS_HIGH() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,GPIO_PIN_SET)
-#define BS_NRF_CE_LOW() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_RESET)  //BSHH PB4 is CE
+#define BS_NRF_CE_LOW() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_RESET)
 #define BS_NRF_CE_HIGH() 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_SET)
 
 void bshh_nrf_delay_ms(unsigned int dly);

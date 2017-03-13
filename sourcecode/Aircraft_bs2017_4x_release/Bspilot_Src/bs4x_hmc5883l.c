@@ -13,18 +13,21 @@
   **********************************************************************************************
  **/
 
-#ifndef __BSHH_CTRL_H
-#define __BSHH_CTRL_H
+#include "main.h"
+#include "stm32f1xx_hal.h"
+#include "bs4x_hmc5883l.h"
+//
+extern I2C_HandleTypeDef hi2c2;
+//
+uint8_t hmc5883l_id[4];
+//
+void bs4x_hmc5883l_delay_ms(unsigned int dly)
+{
+	HAL_Delay(dly);
+}
 
-extern uint8_t bshh_ctrl_command_table[32];
+void bs4x_hmc5883l_whoami(void)
+{
+	HAL_I2C_Mem_Read(&hi2c2, 0x3c, 0x0a, 0x01, hmc5883l_id, 0x02, 100);
+}
 
-void bshh_ctrl_delay_ms(unsigned int dly);
-void bshh_ctrl_num_to_asc(uint8_t number, uint8_t *asc_buf);
-uint8_t bshh_ctrl_checksum(uint8_t data_len, uint8_t *data_buffer);
-void bshh_ctrl_joystick(uint16_t js_throttle,uint16_t js_pitch,uint16_t js_roll,uint16_t js_yaw);
-void bshh_ctrl_cal(void);
-void bshh_ctrl_unlock(void);
-void bshh_ctrl_highon(void);
-void bshh_ctrl_highoff(void);
-
-#endif

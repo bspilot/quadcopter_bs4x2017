@@ -38,6 +38,8 @@
 #include "bs4x_ble.h"
 #include "bs4x_mpu6050.h"
 #include "bs4x_nrf.h"
+#include "bs4x_baro.h"
+#include "bs4x_hmc5883l.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -64,7 +66,9 @@ PCD_HandleTypeDef hpcd_USB_FS;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t bs4x_ble_receive_data_buf[64];
-extern uint8_t mpu6050_addr[2];
+extern uint8_t mpu6050_id[2];
+extern uint8_t bs4x_baro_id[2];
+extern uint8_t hmc5883l_id[4];
 
 /* USER CODE END PV */
 
@@ -126,12 +130,23 @@ int main(void)
   bs4x_ble_send_string("read mpu6050 id:");
   bs4x_mpu6050_whoami();
   HAL_Delay(200);
-  bs4x_ble_send_char(mpu6050_addr,1);
+  bs4x_ble_send_char(mpu6050_id,1);
   HAL_Delay(200);
   bs4x_nrf_configuration();
   HAL_Delay(200);
   bs4x_nrf_show_rx_addr();
   HAL_Delay(200);
+  bs4x_ble_send_string("read baro id:");
+  bs4x_baro_whoami();
+  HAL_Delay(200);
+  bs4x_ble_send_char(bs4x_baro_id,1);
+  HAL_Delay(200);
+  bs4x_ble_send_string("read hmc5883l id:");
+  bs4x_hmc5883l_whoami();
+  HAL_Delay(200);
+  bs4x_ble_send_char(hmc5883l_id,2);
+  HAL_Delay(200);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -492,8 +507,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PA0 PA1 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA2 */
@@ -526,8 +541,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB12 PB13 PB14 PB15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+  /*Configure GPIO pins : PB12 PB13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB14 PB15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_14|GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
